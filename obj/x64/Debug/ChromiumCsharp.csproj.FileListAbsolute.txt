@@ -1,0 +1,19 @@
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.Core.dll
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.dll
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.WinForms.dll
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.WinForms.pdb
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.WinForms.xml
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.pdb
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.xml
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.Core.pdb
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\CefSharp.Core.xml
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\ChromiumCsharp.csprojResolveAssemblyReference.cache
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\ChromiumCsharp.Form1.resources
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\ChromiumCsharp.csproj.GenerateResource.Cache
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\ChromiumCsharp.csproj.CoreCompileInputs.cache
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\TK Farmlist Buddy.exe.config
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\TK Farmlist Buddy.exe
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\bin\x64\Debug\TK Farmlist Buddy.pdb
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\TK_Farmlist_Buddy.Properties.Resources.resources
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\TK Farmlist Buddy.exe
+C:\Users\KryTonX\source\repos\ChromiumCsharp\ChromiumCsharp\obj\x64\Debug\TK Farmlist Buddy.pdb
