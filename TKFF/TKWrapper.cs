@@ -20,6 +20,8 @@ namespace TKFF
             browser.LoadUrl("http://www.google.de");
             Console.WriteLine("Aaaand back to Kingdoms!");
             browser.LoadUrl("http://www.kingdoms.com");
+            browser.clickElement()
         }
+
     }
 }

@@ -32,10 +32,9 @@ namespace TKFF
         }
 
 
-        public Boolean clickElement(String value, String valueType)
+        public void clickElement(string id)
         {
-                
-            return true;
+            driver.FindElement(By.Id(id)).Click();
         }
     }
 }
