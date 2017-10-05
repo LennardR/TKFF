@@ -67,5 +67,10 @@ namespace TKFF
             }
         }
 
+        public void chooseSelect(By byElement,By byOption)
+        {
+            driver.FindElement(byElement).Click();
+        }
+
     }
 }

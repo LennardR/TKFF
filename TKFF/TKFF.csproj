@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChromeWrapper.cs" />
+    <Compile Include="FarmFinder.cs" />
     <Compile Include="TKWrapper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

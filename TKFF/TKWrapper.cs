@@ -21,7 +21,7 @@ namespace TKFF
             Console.WriteLine("Aaaand back to Kingdoms!");
             browser.LoadUrl("http://www.kingdoms.com");
             Console.WriteLine("click play now");
-            browser.clickElement("loginButton");
+            browser.clickElement(By.Id("loginButton"));
             Console.WriteLine("did he ? ");
 
 
