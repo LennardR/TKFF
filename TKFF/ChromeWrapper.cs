@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CefSharp;
-using CefSharp.WinForms;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace TKFF
 {
@@ -47,24 +46,37 @@ namespace TKFF
             driver.FindElement(by).Click();
         }
 
-        public Boolean waitForElement(int timeoutInSeconds,By by)
+        public void typeTextBox(By by,String msg)
         {
-            IWebElement waitedForElement = null;
-            if (timeoutInSeconds > 0)
-            {
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-                waitedForElement = wait.Until(drv => drv.FindElement(by));
+            IWebElement textBox = driver.FindElement(by);
+            textBox.Clear();
+            textBox.SendKeys(msg);
+        }
 
-            }
-            waitedForElement = driver.FindElement(by);
-            if (waitedForElement == null)
+        public bool WaitUntilElementIsPresent(By by, int timeout)
+        {
+            for (var i = 0; i < timeout; i++)
             {
-                return false;
+                try
+                {
+                    IWebElement element = null;
+                    element = driver.FindElement(by);
+                    if (element != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        Console.Write("WTF HOW?!");
+                        return false;
+                    }
+                }
+                catch (ElementNotVisibleException e)
+                {
+                    Thread.Sleep(1000);
+                }
             }
-            else
-            {
-                return true;
-            }
+            return false;
         }
 
     }
