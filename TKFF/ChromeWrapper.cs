@@ -42,7 +42,8 @@ namespace TKFF
 
         public void clickElement(String idValue)
         {
-            driver.FindElement(By.Id(idValue)).Click();
+            IWebElement e = driver.FindElement(By.Id(idValue));
+            if (true)e.Click();
         }
     }
 }
