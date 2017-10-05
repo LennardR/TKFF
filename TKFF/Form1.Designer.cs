@@ -37,6 +37,7 @@
             pBrowser.Name = "pBrowser";
             pBrowser.Size = new System.Drawing.Size(1080, 720);
             pBrowser.TabIndex = 0;
+            pBrowser.Paint += new System.Windows.Forms.PaintEventHandler(this.pBrowser_Paint);
             // 
             // Form1
             // 
@@ -46,7 +47,7 @@
             this.Controls.Add(pBrowser);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form1_LoadAsync);
             this.ResumeLayout(false);
 
         }
