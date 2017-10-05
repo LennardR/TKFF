@@ -79,7 +79,14 @@ namespace TKFF
             return false;
         }
 
-      
+      public IWebElement getElement(By by)
+      {
+          return driver.FindElement(by);
+      }
+      public IReadOnlyCollection<IWebElement> getElements(By by)
+      {
+            return driver.FindElements(by);
+      }
 
     }
 }
