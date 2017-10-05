@@ -19,22 +19,29 @@ namespace TKFF
         public ChromeWrapper()
         {
             ChromeDriverService service = ChromeDriverService.CreateDefaultService();
-            service.Port = 8088;
             driver = new ChromeDriver();
         }
-        public String getHTML()
+        public String getHTMLOfElement(String idValue)
         {
-            return null;
+            return driver.FindElement(By.Id(idValue)).GetAttribute("innerHTML");
+        }
+
+        public String getTextOfElement(String idValue)
+        {
+            return driver.FindElement(By.Id(idValue)).Text;
+        }
+
+        public String getValueOfAttributeOfElement(String idValue, String attributeName)
+        {
+            return driver.FindElement(By.Id(idValue)).GetAttribute(attributeName);
         }
         public void LoadUrl(string url)
         {
             driver.Navigate().GoToUrl(url);
         }
 
-
-        public Boolean clickElement(String value, String valueType)
+        public Boolean clickElement(String id)
         {
-                
             return true;
         }
     }
