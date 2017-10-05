@@ -8,6 +8,7 @@ using CefSharp;
 using CefSharp.WinForms;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace TKFF
 {
@@ -18,32 +19,53 @@ namespace TKFF
 
         public ChromeWrapper()
         {
-            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("--user-data-dir=%LocalAppData%\\Local\\Google\\Chrome\\User Data\\Default");
             driver = new ChromeDriver();
         }
-        public String getHTMLOfElement(String idValue)
+        public String getHTMLOfElement(By by)
         {
-            return driver.FindElement(By.Id(idValue)).GetAttribute("innerHTML");
+            return driver.FindElement(by).GetAttribute("innerHTML");
         }
 
-        public String getTextOfElement(String idValue)
+        public String getTextOfElement(By by)
         {
-            return driver.FindElement(By.Id(idValue)).Text;
+            return driver.FindElement(by).Text;
         }
 
-        public String getValueOfAttributeOfElement(String idValue, String attributeName)
+        public String getValueOfAttributeOfElement(By by, String attributeName)
         {
-            return driver.FindElement(By.Id(idValue)).GetAttribute(attributeName);
+            return driver.FindElement(by).GetAttribute(attributeName);
         }
         public void LoadUrl(string url)
         {
             driver.Navigate().GoToUrl(url);
         }
 
-        public void clickElement(String idValue)
+        public void clickElement(By by)
         {
-            IWebElement e = driver.FindElement(By.Id(idValue));
-            if (true)e.Click();
+            driver.FindElement(by).Click();
         }
+
+        public Boolean waitForElement(int timeoutInSeconds,By by)
+        {
+            IWebElement waitedForElement = null;
+            if (timeoutInSeconds > 0)
+            {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+                waitedForElement = wait.Until(drv => drv.FindElement(by));
+
+            }
+            waitedForElement = driver.FindElement(by);
+            if (waitedForElement == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
     }
 }
