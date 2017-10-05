@@ -48,7 +48,8 @@ namespace TKFF
 
         public void typeTextBox(By by,String msg)
         {
-            IWebElement textBox = driver.FindElement(by);
+            IWebElement textBox = null;
+            textBox = driver.FindElement(by);
             textBox.Clear();
             textBox.SendKeys(msg);
         }
@@ -71,7 +72,9 @@ namespace TKFF
                         return false;
                     }
                 }
-                catch (ElementNotVisibleException e)
+#pragma warning disable CS0168 // Variable is declared but never used
+                catch (NoSuchElementException e)
+#pragma warning restore CS0168 // Variable is declared but never used
                 {
                     Thread.Sleep(1000);
                 }
