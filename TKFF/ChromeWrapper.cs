@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
 
 namespace TKFF
 {
     class ChromeWrapper
+    //Controlling Chrome with Selenium
     {
         private static ChromiumWebBrowser chromeBrowser;
 

@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
 using CefSharp.Internals;
 
 namespace TKFF
