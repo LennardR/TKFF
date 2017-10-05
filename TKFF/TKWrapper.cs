@@ -21,7 +21,7 @@ namespace TKFF
         public void Login(String emailadresse, String password)
         {
             browser.clickElement(By.Id("loginButton"));
-            Boolean emailInputExistsbrowser = browser.WaitUntilElementIsPresent(By.Name("email"), 5));
+            Boolean emailInputExistsbrowser = browser.WaitUntilElementIsPresent(By.Name("email"), 5);
             browser.typeTextBox(By.Name("email"), emailadresse);
         }
 
