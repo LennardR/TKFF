@@ -16,21 +16,13 @@ namespace TKFF
         browser = new ChromeWrapper();
             Console.WriteLine("Going to Kingdoms!");
             browser.LoadUrl("http://www.kingdoms.com");
-            Console.WriteLine("Back to google!");
-            browser.LoadUrl("http://www.google.de");
-            Console.WriteLine("Aaaand back to Kingdoms!");
-            browser.LoadUrl("http://www.kingdoms.com");
-            Console.WriteLine("click play now");
-            browser.clickElement(By.Id("loginButton"));
-            Console.WriteLine("did he ? ");
-
-
+            Login("andrasmumm99@yahoo.de", "aachenbremen123");
         }
 
         public void Login(String username, String password)
         {
             browser.clickElement(By.Id("loginButton"));
-            browser.waitForElement(3,By.Name("email"));
+            browser.WaitUntilElementIsPresent(By.Name("email"),5);
         }
 
     }
