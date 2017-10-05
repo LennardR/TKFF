@@ -8,9 +8,10 @@ namespace TKFF
 {
     class TKWrapper
     {
-        public TKWrapper() { 
+        public TKWrapper() {
+        Console.WriteLine("Hi!");
         ChromeWrapper browser = new ChromeWrapper();
-        Console.WriteLine(browser.getHTML());
+        //Console.WriteLine(browser.getHTML());
         }
     }
 }
