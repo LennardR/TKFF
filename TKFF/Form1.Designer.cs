@@ -28,33 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pBrowser = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // pBrowser
-            // 
-            pBrowser.Location = new System.Drawing.Point(0, 150);
-            pBrowser.Name = "pBrowser";
-            pBrowser.Size = new System.Drawing.Size(1080, 720);
-            pBrowser.TabIndex = 0;
-            pBrowser.Paint += new System.Windows.Forms.PaintEventHandler(this.pBrowser_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 831);
-            this.Controls.Add(pBrowser);
+            this.ClientSize = new System.Drawing.Size(462, 404);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_LoadAsync);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public static System.Windows.Forms.Panel pBrowser;
     }
 }
 

@@ -14,30 +14,27 @@ namespace TKFF
     class ChromeWrapper
     //Controlling Chrome with Selenium
     {
-        private static ChromiumWebBrowser chromeBrowser;
+        private static IWebDriver driver;
 
         public ChromeWrapper()
         {
-            chromeBrowser = Form1.chromeBrowser;
+            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+            service.Port = 8088;
+            driver = new ChromeDriver();
         }
         public String getHTML()
         {
-            String source = chromeBrowser.GetSourceAsync().ToString();
-            return source;
+            return null;
         }
         public void LoadUrl(string url)
         {
-            if (Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
-            {
-                chromeBrowser.Load(url);
-            }
+            driver.Navigate().GoToUrl(url);
         }
 
 
         public Boolean clickElement(String value, String valueType)
         {
                 
-
             return true;
         }
     }

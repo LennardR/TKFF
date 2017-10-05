@@ -14,7 +14,12 @@ namespace TKFF
         public TKWrapper() {
         Console.WriteLine("Hi!");
         ChromeWrapper browser = new ChromeWrapper();
-        Console.WriteLine(browser.getHTML());
+            Console.WriteLine("Going to Kingdoms!");
+            browser.LoadUrl("http://www.kingdoms.com");
+            Console.WriteLine("Back to google!");
+            browser.LoadUrl("http://www.google.de");
+            Console.WriteLine("Aaaand back to Kingdoms!");
+            browser.LoadUrl("http://www.kingdoms.com");
         }
     }
 }
