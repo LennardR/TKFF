@@ -20,8 +20,8 @@ namespace TKFF
         private void Form1_Load(object sender, EventArgs e)
         {
             //FOR TESTING PURPOSE
-            FarmFinder farm = new FarmFinder();
-           // TKWrapper travian = new TKWrapper();
+           // FarmFinder farm = new FarmFinder();
+            TKWrapper travian = new TKWrapper();
         }
 
         private void pBrowser_Paint(object sender, PaintEventArgs e)

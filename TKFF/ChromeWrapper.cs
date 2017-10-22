@@ -60,10 +60,12 @@ namespace TKFF
             {
                 try
                 {
+                    Console.WriteLine("Searching for element " + by.ToString());
                     IWebElement element = null;
                     element = driver.FindElement(by);
                     if (element != null)
                     {
+                        Console.WriteLine("Found!");
                         return true;
                     }
                     else
@@ -72,13 +74,14 @@ namespace TKFF
                         return false;
                     }
                 }
-#pragma warning disable CS0168 // Variable is declared but never used
+#pragma warning disable CS0168
                 catch (NoSuchElementException e)
-#pragma warning restore CS0168 // Variable is declared but never used
+#pragma warning restore CS0168
                 {
                     Thread.Sleep(1000);
                 }
             }
+            Console.Write(by.ToString() + " not found!");
             return false;
         }
 

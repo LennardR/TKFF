@@ -15,14 +15,18 @@ namespace TKFF
         browser = new ChromeWrapper();
             Console.WriteLine("Going to Kingdoms!");
             browser.LoadUrl("http://www.kingdoms.com");
+            Console.WriteLine("Kingdoms Website loaded!");
             Login("andrasmumm99@yahoo.de", "aachenbremen123");
         }
 
         public void Login(String emailadresse, String password)
         {
             browser.clickElement(By.Id("loginButton"));
-            Boolean emailInputExistsbrowser = browser.WaitUntilElementIsPresent(By.Name("email"), 5);
+            if (browser.WaitUntilElementIsPresent(By.Name("submit"), 5) == false){ 
             browser.typeTextBox(By.Name("email"), emailadresse);
+            }else{
+                Console.Write("Login not possible! Login form not found!");
+            }
         }
 
     }
