@@ -43,6 +43,7 @@ namespace TKFF
 
         public void clickElement(By by)
         {
+            Console.WriteLine("Clicking on element " + by.ToString());
             driver.FindElement(by).Click();
         }
 
@@ -56,11 +57,12 @@ namespace TKFF
 
         public bool WaitUntilElementIsPresent(By by, int timeout)
         {
+            Console.WriteLine("Searching for element " + by.ToString());
             for (var i = 0; i < timeout; i++)
             {
                 try
                 {
-                    Console.WriteLine("Searching for element " + by.ToString());
+                    Console.WriteLine("Try: " + i + "/" + timeout);
                     IWebElement element = null;
                     element = driver.FindElement(by);
                     if (element != null)

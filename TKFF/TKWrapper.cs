@@ -14,14 +14,15 @@ namespace TKFF
         Console.WriteLine("Hi!");
         browser = new ChromeWrapper();
             Console.WriteLine("Going to Kingdoms!");
-            browser.LoadUrl("http://www.kingdoms.com");
+            browser.LoadUrl("http://com2x3.kingdoms.com");
             Console.WriteLine("Kingdoms Website loaded!");
             Login("andrasmumm99@yahoo.de", "aachenbremen123");
         }
 
         public void Login(String emailadresse, String password)
         {
-            browser.clickElement(By.Id("loginButton"));
+            browser.WaitUntilElementIsPresent(By.Id("loginButton"),5);
+            //browser.clickElement(By.Id("loginButton"));
             if (browser.WaitUntilElementIsPresent(By.Name("submit"), 5) == false){ 
             browser.typeTextBox(By.Name("email"), emailadresse);
             }else{
