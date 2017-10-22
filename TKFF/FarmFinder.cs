@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
+using System.Threading;
 
 public struct strTab
 {
     public void init_strTab()
     {
         distance = "";
+        evodot = "";
         evo = "";
         coords = "";
         pop = "";
@@ -23,6 +25,7 @@ public struct strTab
         action = "";
     }
     public string distance;
+    public string evodot;
     public string evo;
     public string coords;
     public string pop;
@@ -51,9 +54,9 @@ namespace TKFF
             string y = "1";
             string village = "1";
             string vPopMin = "1";
-            string vPopMax = "100";
+            string vPopMax = "10000";
             string vPlaMin = "1";
-            string vPlaMax = "100";
+            string vPlaMax = "10000";
             string vilcount = "10";
             string evoMax = "1";
             string evoMin = "1";
@@ -76,16 +79,16 @@ namespace TKFF
                 if (ele.GetAttribute("label").Contains("com2x3.kingdoms.com")) ele.Click();
             }
 
-            browser.typeTextBox(By.Id("md-input-0"), x);
-            browser.typeTextBox(By.Id("md-input-1"), y);
-            browser.typeTextBox(By.Id("md-input-9"), village);
-            browser.typeTextBox(By.Id("md-input-2"), vPopMin);
-            browser.typeTextBox(By.Id("md-input-3"), vPopMax);
-            browser.typeTextBox(By.Id("md-input-4"), vPlaMin);
-            browser.typeTextBox(By.Id("md-input-5"), vPlaMax);
-            browser.typeTextBox(By.Id("md-input-6"), vilcount);
-            browser.typeTextBox(By.Id("md-input-7"), evoMax);
-            browser.typeTextBox(By.Id("md-input-8"), evoMin);
+            browser.typeTextBox(By.Id("mat-input-0"), x);
+            browser.typeTextBox(By.Id("mat-input-1"), y);
+            browser.typeTextBox(By.Id("mat-input-9"), village);
+            browser.typeTextBox(By.Id("mat-input-2"), vPopMin);
+            browser.typeTextBox(By.Id("mat-input-3"), vPopMax);
+            browser.typeTextBox(By.Id("mat-input-4"), vPlaMin);
+            browser.typeTextBox(By.Id("mat-input-5"), vPlaMax);
+            browser.typeTextBox(By.Id("mat-input-6"), vilcount);
+            browser.typeTextBox(By.Id("mat-input-7"), evoMax);
+            browser.typeTextBox(By.Id("mat-input-8"), evoMin);
 
             //if (browser.WaitUntilElementIsPresent(By.ClassName("mat-checkbox mat-accent ng-valid ng-dirty ng-touched mat-checkbox-anim-unchecked-checked mat-checkbox-checked"), 1) != allowRomans)
             //    browser.clickElement(By.ClassName("mat-checkbox mat-accent ng-valid ng-dirty ng-touched mat-checkbox-anim-unchecked-checked mat-checkbox-checked"));
@@ -95,32 +98,33 @@ namespace TKFF
             //    browser.clickElement(By.ClassName("mat-checkbox mat-accent ng-valid ng-dirty ng-touched mat-checkbox-anim-unchecked-checked mat-checkbox-checked"));
             //if (browser.WaitUntilElementIsPresent(By.ClassName("mat-checkbox mat-accent ng-valid ng-dirty ng-touched mat-checkbox-anim-unchecked-checked mat-checkbox-checked"), 1) != allowcapitals)
             //    browser.clickElement(By.ClassName("mat-checkbox mat-accent ng-valid ng-dirty ng-touched mat-checkbox-anim-unchecked-checked mat-checkbox-checked"));
-            IWebElement aRomans = browser.getElement(By.Id("md-checkbox-1"));
-            IWebElement aGauls = browser.getElement(By.Id("md-checkbox-2"));
-            IWebElement aTeutons = browser.getElement(By.Id("md-checkbox-3"));
-            IWebElement aCapitals = browser.getElement(By.Id("md-checkbox-4"));
+            IWebElement aRomans = browser.getElement(By.Id("mat-checkbox-1"));
+            IWebElement aGauls = browser.getElement(By.Id("mat-checkbox-2"));
+            IWebElement aTeutons = browser.getElement(By.Id("mat-checkbox-3"));
+            IWebElement aCapitals = browser.getElement(By.Id("mat-checkbox-4"));
 
             Console.WriteLine(aRomans.GetAttribute("className"));
             Console.WriteLine(aRomans.GetAttribute("className").Contains("mat-checkbox-checked"));
             if (aRomans.GetAttribute("className").Contains("mat-checkbox-checked") != allowRomans)
             {
-                browser.clickElement(By.Id("md-checkbox-1"));
+                browser.clickElement(By.Id("mat-checkbox-1"));
             }
             if (aGauls.GetAttribute("className").Contains("mat-checkbox-checked") != allowGauls)
             {
-                browser.clickElement(By.Id("md-checkbox-2"));
+                browser.clickElement(By.Id("mat-checkbox-2"));
             }
             if (aTeutons.GetAttribute("className").Contains("mat-checkbox-checked") != allowTeutons)
             {
-                browser.clickElement(By.Id("md-checkbox-3"));
+                browser.clickElement(By.Id("mat-checkbox-3"));
             }
             if (aRomans.GetAttribute("className").Contains("mat-checkbox-checked") != allowCapitals)
             {
-                browser.clickElement(By.Id("md-checkbox-4"));
+                browser.clickElement(By.Id("mat-checkbox-4"));
             }
 
             browser.clickElement(By.ClassName("mat-raised-button"));
 
+            Thread.Sleep(1000);
             IReadOnlyCollection<IWebElement> table = browser.getElements(By.TagName("tr"));
             foreach (IWebElement row in table)
             {
@@ -136,30 +140,33 @@ namespace TKFF
                             tmp.distance = atom.Text;
                             break;
                         case 1:
-                            tmp.evo = atom.Text;
+                            tmp.evodot = atom.Text;
                             break;
                         case 2:
-                            tmp.coords = atom.Text;
+                            tmp.evo = atom.Text;
                             break;
                         case 3:
-                            tmp.pop = atom.Text;
+                            tmp.coords = atom.Text;
                             break;
                         case 4:
-                            tmp.village = atom.Text;
+                            tmp.pop = atom.Text;
                             break;
                         case 5:
-                            tmp.player = atom.Text;
+                            tmp.village = atom.Text;
                             break;
                         case 6:
-                            tmp.tribe = atom.Text;
+                            tmp.player = atom.Text;
                             break;
                         case 7:
-                            tmp.numVillages = atom.Text;
+                            tmp.tribe = atom.Text;
                             break;
                         case 8:
-                            tmp.kingdom = atom.Text;
+                            tmp.numVillages = atom.Text;
                             break;
                         case 9:
+                            tmp.kingdom = atom.Text;
+                            break;
+                        case 10:
                             tmp.action = atom.Text;
                             break;
                         default:
