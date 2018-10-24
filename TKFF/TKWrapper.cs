@@ -16,7 +16,7 @@ namespace TKFF
             Console.WriteLine("Going to Kingdoms!");
             browser.LoadUrl("http://www.kingdoms.com");
             Console.WriteLine("Kingdoms Website loaded!");
-            Login("andrasmumm99@yahoo.de", "aachenbremen123");
+            Login("xx","xx");
         }
 
         public void Login(String emailadresse, String password)
